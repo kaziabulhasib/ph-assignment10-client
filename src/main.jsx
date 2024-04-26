@@ -10,6 +10,7 @@ import Register from "./Components/Register/Register";
 import Login from "./Components/Login/Login";
 import AddItem from "./Components/AddItem/AddItem";
 import AllItems from "./Components/AllItems/AllItems";
+import MyCraft from "./Components/MyCraft/MyCraft";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
         element: <AllItems></AllItems>,
         loader: () =>
           fetch("https://assigment10-type02-server.vercel.app/items"),
+      },
+      {
+        path: "/mycraft",
+        element: <MyCraft></MyCraft>,
       },
       {
         path: "/register",
