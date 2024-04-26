@@ -9,6 +9,7 @@ import Root from "./Components/Root/Root";
 import Register from "./Components/Register/Register";
 import Login from "./Components/Login/Login";
 import AddItem from "./Components/AddItem/AddItem";
+import AllItems from "./Components/AllItems/AllItems";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,6 +23,12 @@ const router = createBrowserRouter([
       {
         path: "/add",
         element: <AddItem></AddItem>,
+        // loader: () => fetch("http://localhost:5000/items"),
+      },
+      {
+        path: "/allitems",
+        element: <AllItems></AllItems>,
+        loader: () => fetch("http://localhost:5000/items"),
       },
       {
         path: "/register",
