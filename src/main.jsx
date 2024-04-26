@@ -8,6 +8,7 @@ import Home from "./Components/Home/Home";
 import Root from "./Components/Root/Root";
 import Register from "./Components/Register/Register";
 import Login from "./Components/Login/Login";
+import AddItem from "./Components/AddItem/AddItem";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "/add",
+        element: <AddItem></AddItem>,
       },
       {
         path: "/register",
