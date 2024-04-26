@@ -8,13 +8,16 @@ const AddItem = () => {
     console.log(item);
     form.reset();
 
-    fetch("http://localhost:5000/items", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(item),
-    })
+    fetch(
+      "https://assigment10-type02-server-ew2wp7rtf-hasibs-projects-23da5587.vercel.app/items",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(item),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

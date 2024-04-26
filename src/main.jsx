@@ -23,12 +23,13 @@ const router = createBrowserRouter([
       {
         path: "/add",
         element: <AddItem></AddItem>,
-        // loader: () => fetch("http://localhost:5000/items"),
+        // loader: () => fetch("https://assigment10-type02-server-ew2wp7rtf-hasibs-projects-23da5587.vercel.app/items"),
       },
       {
         path: "/allitems",
         element: <AllItems></AllItems>,
-        loader: () => fetch("http://localhost:5000/items"),
+        loader: () =>
+          fetch("https://assigment10-type02-server.vercel.app/items"),
       },
       {
         path: "/register",
