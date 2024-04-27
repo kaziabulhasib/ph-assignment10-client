@@ -3,7 +3,7 @@ import Nav from "../Nav/Nav";
 
 const Root = () => {
   return (
-    <div className='max-w-7xl mx-auto py-8 pb-14 border'>
+    <div className='max-w-7xl mx-auto py-8 pb-14 '>
       <Nav></Nav>
       <Outlet></Outlet>
     </div>

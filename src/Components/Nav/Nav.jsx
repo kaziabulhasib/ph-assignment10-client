@@ -1,17 +1,18 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Nav.css";
-// import { useContext } from "react";
-// import { AuthContext } from "../Providers/AuthProvider";
-const Nav = () => {
-  // const { user, logOut } = useContext(AuthContext);
+import { useContext } from "react";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
-  // const handleLogOut = () => {
-  //   logOut()
-  //     .then(() => {
-  //       console.log("User Logged out");
-  //     })
-  //     .catch((error) => console.error(error));
-  // };
+const Nav = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        console.log("User Logged out");
+      })
+      .catch((error) => console.error(error));
+  };
 
   const links = (
     <>
@@ -69,7 +70,7 @@ const Nav = () => {
         <ul className='menu menu-horizontal px-1 space-x-6'>{links}</ul>
       </div>
       <div className='navbar-end'>
-        {/* {user ? (
+        {user ? (
           <>
             {" "}
             <div className='dropdown dropdown-end'>
@@ -78,7 +79,7 @@ const Nav = () => {
                   <img
                     src={
                       user?.photoURL ||
-                      "https://i.ibb.co/y0yrnYQ/1681283571946.jpg"
+                      "https://startup.telangana.gov.in/wp-content/uploads/2021/07/male-placeholder-1000x960.jpg"
                     }
                   />
                 </div>
@@ -101,7 +102,7 @@ const Nav = () => {
           <Link to='/login' className='btn'>
             Login
           </Link>
-        )} */}
+        )}
       </div>
     </div>
   );

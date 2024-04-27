@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Register = () => {
+  const { createUser, updateUserProfile } = useContext(AuthContext);
+
   const [showPassword, SetShowPassword] = useState(false);
   const [registerError, setRegisterError] = useState("");
+
   const handleRegister = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -14,6 +18,13 @@ const Register = () => {
     console.log(email, password, name, image);
     e.target.reset();
 
+    createUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
     // password validation
     if (!/[A-Z]/.test(password)) {
       setRegisterError("Password must contain at least one uppercase letter");
@@ -30,6 +41,16 @@ const Register = () => {
     }
     // reset error
     setRegisterError("");
+    createUser(email, password).then((result) => {
+      // update user profil
+      updateUserProfile(name, image);
+
+      console.log(result.user);
+      // setSuccess(true);--- will use later
+
+      // notify(); --- will use later
+      e.target.reset();
+    });
   };
   return (
     <div className='hero min-h-screen bg-base-200'>
