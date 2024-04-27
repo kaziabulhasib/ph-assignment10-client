@@ -1,8 +1,26 @@
-# React + Vite
+# Brushify
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Live Link: https://asg10-type02.web.app/
 
-Currently, two official plugins are available:
+### Features of website -
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Landscape Painting: Explore mountain view canvases and forest-based landscape paintings.
+- Portrait Drawing: Create pencil sketch portraits, ink outline portraits, and acrylic portrait canvases.
+- Watercolour Painting: Dive into floral watercolor art and animal watercolor portraits.
+- Oil Painting: Capture realistic oil portraits or venture into abstract oil painting.
+- Charcoal Sketching: Master figure charcoal sketches and architectural charcoal drawings.
+- Cartoon Drawing: Unleash your creativity with comic strip drawings and superhero cartoon designs.
+
+### selected Categories -
+
+#### Painting and Drawing
+
+a. Landscape Painting: Mountain view canvas, Forest based Landscape
+painting,
+b. Portrait Drawing: Pencil Sketch Portrait, Ink Outline Portrait, Acrylic
+Portrait Canvas
+c. Watercolour Painting: Floral Watercolor Art, Animal Watercolor Portrait
+d. Oil Painting: Realistic Oil Portrait, Abstract Oil Painting
+e. Charcoal Sketching: Figure Charcoal Sketch, Architectural Charcoal
+Drawing
+f. Cartoon Drawing: Comic Strip Drawing, Superhero Cartoon Design
