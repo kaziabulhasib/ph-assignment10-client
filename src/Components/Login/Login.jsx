@@ -38,6 +38,7 @@ const Login = () => {
     signinWithGoogle()
       .then((result) => {
         console.log(result);
+        notify();
       })
       .catch((error) => {
         console.error(error);
@@ -49,6 +50,7 @@ const Login = () => {
     signinWithGithub()
       .then((result) => {
         console.log(result);
+        notify();
       })
       .catch((error) => {
         console.error(error);

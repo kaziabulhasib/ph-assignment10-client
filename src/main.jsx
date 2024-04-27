@@ -22,6 +22,8 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: () =>
+          fetch("https://assigment10-type02-server.vercel.app/items"),
       },
       {
         path: "/add",
