@@ -27,11 +27,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/add",
-        element: (
-          <PrivateRoute>
-            <AddItem></AddItem>
-          </PrivateRoute>
-        ),
+        element: <AddItem></AddItem>,
         // loader: () => fetch("https://assigment10-type02-server-ew2wp7rtf-hasibs-projects-23da5587.vercel.app/items"),
       },
       {
