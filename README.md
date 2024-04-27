@@ -15,12 +15,9 @@
 
 #### Painting and Drawing
 
-a. Landscape Painting: Mountain view canvas, Forest based Landscape
-painting,
-b. Portrait Drawing: Pencil Sketch Portrait, Ink Outline Portrait, Acrylic
-Portrait Canvas
-c. Watercolour Painting: Floral Watercolor Art, Animal Watercolor Portrait
-d. Oil Painting: Realistic Oil Portrait, Abstract Oil Painting
-e. Charcoal Sketching: Figure Charcoal Sketch, Architectural Charcoal
-Drawing
+a. Landscape Painting: Mountain view canvas, Forest based Landscape painting,<br>
+b. Portrait Drawing: Pencil Sketch Portrait, Ink Outline Portrait, Acrylic Portrait Canvas,<br>
+c. Watercolour Painting: Floral Watercolor Art, Animal Watercolor Portrait,<br>
+d. Oil Painting: Realistic Oil Portrait, Abstract Oil Painting,<br>
+e. Charcoal Sketching: Figure Charcoal Sketch, Architectural Charcoal Drawing,<br>
 f. Cartoon Drawing: Comic Strip Drawing, Superhero Cartoon Design
