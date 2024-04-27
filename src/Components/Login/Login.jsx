@@ -9,7 +9,8 @@ import "react-toastify/dist/ReactToastify.css";
 const Login = () => {
   const notify = () => toast("Logged in Successfully");
   const [loginError, setLoginError] = useState("");
-  const { signinUser } = useContext(AuthContext);
+  const { signinUser, signinWithGoogle, signinWithGithub } =
+    useContext(AuthContext);
   const handleLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -29,6 +30,28 @@ const Login = () => {
         console.error(error);
         setLoginError("Email or Password didn't match");
         e.target.reset();
+      });
+  };
+
+  //  google Log in
+  const handleGoogleLogin = () => {
+    signinWithGoogle()
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  // git hub login
+  const handleGithubLogin = () => {
+    signinWithGithub()
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.error(error);
       });
   };
   return (
@@ -80,6 +103,15 @@ const Login = () => {
             </div>
           </form>
           {loginError && <p className=' bg-red-500'>{loginError}</p>}
+          {/* social Login  */}
+          <div className='p-4 flex gap-4'>
+            <button onClick={handleGoogleLogin} className='btn btn-sm'>
+              Google Login
+            </button>
+            <button onClick={handleGithubLogin} className='btn btn-sm'>
+              Github Login
+            </button>
+          </div>
         </div>
       </div>
       <ToastContainer />

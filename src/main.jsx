@@ -12,6 +12,7 @@ import AddItem from "./Components/AddItem/AddItem";
 import AllItems from "./Components/AllItems/AllItems";
 import MyCraft from "./Components/MyCraft/MyCraft";
 import AuthProvider from "../Providers/AuthProvider";
+import PrivateRoute from "./routes/PrivateRoute";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,7 +25,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/add",
-        element: <AddItem></AddItem>,
+        element: (
+          <PrivateRoute>
+            <AddItem></AddItem>
+          </PrivateRoute>
+        ),
         // loader: () => fetch("https://assigment10-type02-server-ew2wp7rtf-hasibs-projects-23da5587.vercel.app/items"),
       },
       {
@@ -35,7 +40,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/mycraft",
-        element: <MyCraft></MyCraft>,
+        element: (
+          <PrivateRoute>
+            <MyCraft></MyCraft>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/register",
