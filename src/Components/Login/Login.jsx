@@ -1,8 +1,14 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
+// toast
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
+  const notify = () => toast("Logged in Successfully");
+  const [loginError, setLoginError] = useState("");
   const { signinUser } = useContext(AuthContext);
   const handleLogin = (e) => {
     e.preventDefault();
@@ -16,12 +22,12 @@ const Login = () => {
         console.log(result.user);
         e.target.reset();
         // navigate("/");
-        // notify();
-        // setLoginError("");
+        notify();
+        setLoginError("");
       })
       .catch((error) => {
         console.error(error);
-        // setLoginError("Email or Password didn't match");
+        setLoginError("Email or Password didn't match");
         e.target.reset();
       });
   };
@@ -73,8 +79,10 @@ const Login = () => {
               <button className='btn bg-[#f2f2f2]'>Login</button>
             </div>
           </form>
+          {loginError && <p className=' bg-red-500'>{loginError}</p>}
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

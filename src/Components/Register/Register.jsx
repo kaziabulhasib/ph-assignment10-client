@@ -2,12 +2,18 @@ import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
+// toast
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
+  const notify = () => toast("User created Successfully");
   const { createUser, updateUserProfile } = useContext(AuthContext);
 
   const [showPassword, SetShowPassword] = useState(false);
   const [registerError, setRegisterError] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -41,16 +47,22 @@ const Register = () => {
     }
     // reset error
     setRegisterError("");
-    createUser(email, password).then((result) => {
-      // update user profil
-      updateUserProfile(name, image);
+    createUser(email, password)
+      .then((result) => {
+        // update user profil
+        updateUserProfile(name, image);
 
-      console.log(result.user);
-      // setSuccess(true);--- will use later
+        console.log(result.user);
+        setSuccess(true);
 
-      // notify(); --- will use later
-      e.target.reset();
-    });
+        notify();
+        e.target.reset();
+      })
+      .catch((error) => {
+        console.error(error);
+        setRegisterError(error.message);
+        setSuccess(false);
+      });
   };
   return (
     <div className='hero min-h-screen bg-base-200'>
@@ -92,7 +104,6 @@ const Register = () => {
                 type='text'
                 placeholder='PhotoUrl'
                 className='input input-bordered'
-                required
               />
             </div>
             <div className='form-control'>
@@ -129,8 +140,10 @@ const Register = () => {
               <button className='btn bg-[#f2f2f2]'>Register</button>
             </div>
           </form>
+          {registerError && <p className=' bg-red-500'>{registerError}</p>}
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

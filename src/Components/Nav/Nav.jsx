@@ -26,14 +26,6 @@ const Nav = () => {
         <NavLink activeClassName='active' className='nav-link' to='/mycraft'>
           My Art&Craft
         </NavLink>
-        <NavLink activeClassName='active' className='nav-link' to='/login'>
-          Login
-        </NavLink>
-        {/* {user && (
-          <NavLink activeClassName='active' className='nav-link' to='/profile'>
-            Your Profile
-          </NavLink>
-        )} */}
       </div>
     </>
   );
