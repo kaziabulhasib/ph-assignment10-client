@@ -4,13 +4,63 @@ const CraftItemDetails = () => {
   const craftedItem = useLoaderData();
   return (
     <div>
-      <h1>update info of {craftedItem.itemName}</h1>
-      <h1 className='text-xl my-6 text-red-400'>
-        Description: {craftedItem.description}
-      </h1>
-      <h1 className='text-3xl text-center my-6'>
-        User: {craftedItem.userName}
-      </h1>
+      <div className='flex flex-col lg:flex-row  justify-between  py-14 gap-12 items-center lg:mb-40 mb-[450px]'>
+        <div className='p-16 bg-[#1313130D] flex justify-center items-center rounded-2xl flex-1'>
+          <img
+            className='w-[425px] lg:h-[565px]'
+            src={craftedItem.imageUrl}
+            alt=''
+          />
+        </div>
+        <div className='flex-1 text-center lg:text-left space-y-8 lg:mx-auto mx-4'>
+          <h1 className=' text-2xl  lg:text-4xl  font-bold'>
+            {craftedItem.itemName}
+          </h1>
+          <p className='nav-font font-medium'>
+            {" "}
+            <span className='font-bold'>subcategory:</span>{" "}
+            {craftedItem.subcategory}
+          </p>
+          <p className='nav-font font-medium'>
+            {" "}
+            <span className='font-bold'>customization:</span>{" "}
+            {craftedItem.customization}
+          </p>
+          <p className='nav-font font-medium'>
+            {" "}
+            <span className='font-bold'> Stock-status:</span>{" "}
+            <span className='capitalize'>{craftedItem.stock}</span>{" "}
+          </p>
+          <p>
+            {" "}
+            <span className='font-bold'>Description: </span>{" "}
+            {craftedItem.description}
+          </p>
+
+          <p className='nav-font font-medium'>
+            {" "}
+            <span className='font-bold'>Rating:</span> {craftedItem.rating}
+          </p>
+          <p className='nav-font font-medium'>
+            {" "}
+            <span className='font-bold'> Price: </span> {craftedItem.price}
+          </p>
+          <p className='nav-font font-medium'>
+            {" "}
+            <span className='font-bold'> Processing Time: </span>{" "}
+            {craftedItem.processingTime || "7"} days
+          </p>
+          <p className='nav-font font-medium'>
+            {" "}
+            <span className='font-bold'> UserName: </span>{" "}
+            {craftedItem.userName}
+          </p>
+          <p className='nav-font font-medium'>
+            {" "}
+            <span className='font-bold'> UserEmail: </span> {craftedItem.email}
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

@@ -56,7 +56,7 @@ const AddItem = () => {
       });
   };
   return (
-    <div className='hero min-h-screen bg-base-200 mt-24'>
+    <div className='hero min-h-screen bg-base-200 mt-24 mb-36'>
       <div className='hero-content flex-col '>
         <div className='text-center lg:text-left'>
           <h1 className='text-5xl font-bold'>Add Item</h1>

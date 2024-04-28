@@ -25,9 +25,32 @@ const Home = () => {
                           alt='Painting-xx'
                         />
                       </figure>
-                      <div className='card-body'>
+                      <div className='card-body '>
                         <h2 className='card-title'>{item.itemName}</h2>
-                        <p>{item.price}</p>
+                        <div className='flex gap-12 mb-4'>
+                          <p>
+                            <span className='font-semibold'>
+                              sub-Category:{" "}
+                            </span>
+                            {item.subcategory}
+                          </p>
+                          <p>
+                            <span className='font-semibold'>Rating: </span>
+                            {item.rating}
+                          </p>
+                        </div>
+                        {/* stock & category  */}
+                        <div className='flex gap-12 mb-4'>
+                          <p>
+                            <span className='font-semibold'>Stock-stasus </span>
+                            {item.stock}
+                          </p>
+                          <p>
+                            <span className='font-semibold'>Price: </span>
+                            {item.price}
+                          </p>
+                        </div>
+
                         <div className='card-actions justify-end'>
                           <Link to={`/items/${item._id}`}>
                             <button className='btn  bg-[#e8e5e5]'>
