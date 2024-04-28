@@ -40,7 +40,7 @@ const AddItem = () => {
     console.log(item);
     form.reset();
 
-    fetch("http://localhost:5000/items", {
+    fetch("https://assigment10-type02-server.vercel.app/items", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
