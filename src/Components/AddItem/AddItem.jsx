@@ -1,5 +1,8 @@
+import { ToastContainer, toast } from "react-toastify";
+
 const AddItem = () => {
   const handleAddItem = (event) => {
+    const notify = () => toast("Item added  Successfully");
     event.preventDefault();
     const form = event.target;
     const itemName = form.itemName.value;
@@ -39,17 +42,17 @@ const AddItem = () => {
       .then((data) => {
         console.log(data);
         if (data.insertedId) {
-          alert("item created successfully");
+          notify();
         }
       });
   };
   return (
-    <div className='hero min-h-screen bg-base-200'>
+    <div className='hero min-h-screen bg-base-200 mt-24'>
       <div className='hero-content flex-col '>
         <div className='text-center lg:text-left'>
           <h1 className='text-5xl font-bold'>Add Item</h1>
         </div>
-        <div className='card  shrink-0 w-full  shadow-2xl bg-base-100'>
+        <div className='card  shrink-0 w-full  shadow-2xl bg-base-100 mt-8'>
           <form onSubmit={handleAddItem} className='card-body'>
             {/* item name , image url  */}
             <div className='flex gap-4'>
@@ -208,6 +211,7 @@ const AddItem = () => {
           </form>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

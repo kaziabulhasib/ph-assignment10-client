@@ -13,6 +13,8 @@ import AllItems from "./Components/AllItems/AllItems";
 import MyCraft from "./Components/MyCraft/MyCraft";
 import AuthProvider from "../Providers/AuthProvider";
 import PrivateRoute from "./routes/PrivateRoute";
+import CraftItemDetails from "./Components/CraftItemDetails/CraftItemDetails";
+import AllCraft from "./Components/AllCraft/AllCraft";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,12 +29,30 @@ const router = createBrowserRouter([
       },
       {
         path: "/add",
-        element: <AddItem></AddItem>,
+        element: (
+          <PrivateRoute>
+            <AddItem></AddItem>
+          </PrivateRoute>
+        ),
         // loader: () => fetch("https://assigment10-type02-server-ew2wp7rtf-hasibs-projects-23da5587.vercel.app/items"),
+      },
+      {
+        path: "/items/:id",
+        element: <CraftItemDetails></CraftItemDetails>,
+        loader: ({ params }) =>
+          fetch(
+            `https://assigment10-type02-server.vercel.app/items/${params.id}`
+          ),
       },
       {
         path: "/allitems",
         element: <AllItems></AllItems>,
+        loader: () =>
+          fetch("https://assigment10-type02-server.vercel.app/items"),
+      },
+      {
+        path: "/allcraft",
+        element: <AllCraft></AllCraft>,
         loader: () =>
           fetch("https://assigment10-type02-server.vercel.app/items"),
       },
