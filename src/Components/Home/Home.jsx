@@ -5,11 +5,9 @@ const Home = () => {
   const items = useLoaderData();
   return (
     <div>
-      <h1 className='text-center'>
-        Welcome to Our Exciting Art & Craft Site.{" "}
-      </h1>
       <Slides></Slides>
-      <div className='mt-24'>
+      {/* Crafted item section started  */}
+      <div className='mt-24 mb-36'>
         <h1 className='text-center text-5xl'>
           This is item craft section. Total Item: {items.length}{" "}
         </h1>
@@ -45,6 +43,7 @@ const Home = () => {
           )}
         </div>
       </div>
+      {/* Crafted item section End  */}
     </div>
   );
 };
