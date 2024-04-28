@@ -1,7 +1,12 @@
+import { useContext } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 const AddItem = () => {
+  const { user } = useContext(AuthContext);
+
   const handleAddItem = (event) => {
+    // console.log("getting user info from handleAdd", user.email);
     const notify = () => toast("Item added  Successfully");
     event.preventDefault();
     const form = event.target;
@@ -13,9 +18,12 @@ const AddItem = () => {
     const price = form.price.value;
     const rating = form.rating.value;
     const customization = form.customization.value;
+    const processingTime = form.processing_time.value;
     const stock = form.stock.value;
-    const userName = form.userName.value;
-    const email = form.email.value;
+    // const userName = form.userName.value;
+    const userName = user.displayName;
+    // const email = form.email.value;
+    const email = user.email;
     const item = {
       itemName,
       imageUrl,
@@ -27,6 +35,7 @@ const AddItem = () => {
       stock,
       userName,
       email,
+      processingTime,
     };
     console.log(item);
     form.reset();
@@ -166,14 +175,13 @@ const AddItem = () => {
 
             <div className='form-control'>
               <label className='label'>
-                <span className='label-text'>Processing Time</span>
+                <span className='label-text'>Processing Time(days)</span>
               </label>
               <input
-                type='text'
+                type='number'
                 placeholder='Processing Time'
                 className='input input-bordered'
                 name='processing_time'
-                required
               />
             </div>
 

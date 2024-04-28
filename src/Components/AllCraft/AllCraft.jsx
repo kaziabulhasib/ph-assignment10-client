@@ -1,42 +1,39 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const AllCraft = () => {
-  const allCraftitem = useLoaderData();
+  const allCraftitems = useLoaderData();
   return (
-    <div className='mt-24'>
-      <h1 className='text-6xl text-center mb-8'>
-        All craft data will come soon.Total Data: {allCraftitem.length}
+    <div className='mt-16'>
+      <h1 className='text-6xl font-bold text-center  text-gray-700 mb-8'>
+        All Art & Craft
       </h1>
       <div className='overflow-x-auto'>
         <table className='table table-zebra'>
           {/* head */}
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
-              <th>Favorite bbb</th>
+              <th>ItemName</th>
+              <th>Subcategory </th>
+              <th>Rating</th>
+              <th>Price</th>
             </tr>
           </thead>
           <tbody>
-            {/* row 1 */}
-            <tr>
-              <td>Cy Ganderton</td>
-              <td>Quality Control Specialist</td>
-              <td>Blue</td>
-            </tr>
-            {/* row 2 */}
-            <tr>
-              <td>Hart Hagerty</td>
-              <td>Desktop Support Technician</td>
-              <td>Purple</td>
-            </tr>
-            {/* row 3 */}
-            <tr>
-              <td>Brice Swyre</td>
-              <td>Tax Accountant</td>
-              <td>Red</td>
-            </tr>
+            {allCraftitems.map((item) => (
+              <>
+                <tr>
+                  <td>{item.itemName}</td>
+                  <td>{item.subcategory}</td>
+                  <td>{item.rating}</td>
+                  <td>{item.price}</td>
+                  <td>
+                    <Link to={`/items/${item._id}`}>
+                      <button className='btn ml-6'>View Details</button>
+                    </Link>
+                  </td>
+                </tr>
+              </>
+            ))}
           </tbody>
         </table>
       </div>

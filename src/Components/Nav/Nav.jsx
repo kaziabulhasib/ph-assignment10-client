@@ -23,11 +23,11 @@ const Nav = () => {
         <NavLink activeClassName='active' className='nav-link' to='/add'>
           Add Item
         </NavLink>
-        <NavLink activeClassName='active' className='nav-link' to='/mycraft'>
-          My Art&Craft
-        </NavLink>
         <NavLink activeClassName='active' className='nav-link' to='/allcraft'>
           All Art & Craft
+        </NavLink>
+        <NavLink activeClassName='active' className='nav-link' to='/mycraft'>
+          My Art&Craft
         </NavLink>
       </div>
     </>

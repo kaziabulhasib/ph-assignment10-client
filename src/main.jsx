@@ -15,6 +15,8 @@ import AuthProvider from "../Providers/AuthProvider";
 import PrivateRoute from "./routes/PrivateRoute";
 import CraftItemDetails from "./Components/CraftItemDetails/CraftItemDetails";
 import AllCraft from "./Components/AllCraft/AllCraft";
+import Update from "./Components/Update/Update";
+import Delete from "./Components/Delete/Delete";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -38,7 +40,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/items/:id",
-        element: <CraftItemDetails></CraftItemDetails>,
+        element: (
+          <PrivateRoute>
+            <CraftItemDetails></CraftItemDetails>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(
             `https://assigment10-type02-server.vercel.app/items/${params.id}`
@@ -61,6 +67,22 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <MyCraft></MyCraft>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/update",
+        element: (
+          <PrivateRoute>
+            <Update></Update>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/delete",
+        element: (
+          <PrivateRoute>
+            <Delete></Delete>
           </PrivateRoute>
         ),
       },
