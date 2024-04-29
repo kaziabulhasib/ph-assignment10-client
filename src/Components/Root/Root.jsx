@@ -10,7 +10,7 @@ const Root = () => {
         <Outlet></Outlet>
       </div>
 
-      <Footer className='absolute bottom-0 w-full'></Footer>
+      <Footer className='absolute mt-auto bottom-0 w-full'></Footer>
     </div>
   );
 };

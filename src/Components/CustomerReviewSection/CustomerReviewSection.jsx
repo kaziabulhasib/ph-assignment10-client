@@ -9,7 +9,7 @@ const CustomerReviewSection = () => {
           {/* Customer Review Card 1 */}
           <div className='bg-white rounded-lg shadow-lg overflow-hidden'>
             <img
-              src='/public/male1.jpg'
+              src='/male1.jpg'
               alt='Customer 1'
               className='w-48 h-48 mx-auto mt-6 rounded-full'
             />
@@ -25,7 +25,7 @@ const CustomerReviewSection = () => {
           {/* Customer Review Card 2 */}
           <div className='bg-white rounded-lg shadow-lg overflow-hidden'>
             <img
-              src='/public/male2.jpg'
+              src='/male2.jpg'
               alt='Customer 2'
               className='w-48 h-48 mx-auto mt-6 rounded-full'
             />
@@ -41,7 +41,7 @@ const CustomerReviewSection = () => {
           {/* Customer Review Card 3 */}
           <div className='bg-white rounded-lg shadow-lg overflow-hidden'>
             <img
-              src='/public/female.jpg'
+              src='/female.jpg'
               alt='Customer 3'
               className='w-48 h-48 mx-auto mt-6 rounded-full'
             />
@@ -57,7 +57,7 @@ const CustomerReviewSection = () => {
           {/* Customer Review Card 4 */}
           <div className='bg-white rounded-lg shadow-lg overflow-hidden'>
             <img
-              src='/public/male3.jpg'
+              src='/male3.jpg'
               alt='Customer 4'
               className='w-48 h-48 mx-auto mt-6 rounded-full'
             />

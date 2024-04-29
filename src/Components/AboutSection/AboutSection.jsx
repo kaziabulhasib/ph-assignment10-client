@@ -20,7 +20,7 @@ const AboutSection = () => {
             showcase the talent of artists from around the world.
           </p>
           <p className='text-lg text-gray-800 mb-6'>
-            Founded in 2021, Artistry Hub has since grown into a platform where
+            Founded in 2021, Brushify has since grown into a platform where
             artists and art enthusiasts come together to explore, create, and
             appreciate art in all its forms. We invite you to browse through our
             curated collection of artworks and immerse yourself in the beauty of
