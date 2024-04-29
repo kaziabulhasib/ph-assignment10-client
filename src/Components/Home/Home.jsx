@@ -1,16 +1,20 @@
 import { Link, useLoaderData } from "react-router-dom";
 import Slides from "../Slides/Slides";
+import AboutSection from "../AboutSection/AboutSection";
+import CustomerReviewSection from "../CustomerReviewSection/CustomerReviewSection";
 
 const Home = () => {
   const items = useLoaderData();
   return (
     <div>
       <Slides></Slides>
+      <AboutSection></AboutSection>
       {/* Crafted item section started  */}
       <div className='mt-24 mb-36'>
-        <h1 className='text-center text-5xl'>
-          This is item craft section. Total Item: {items.length}{" "}
+        <h1 className='text-center text-5xl font-bold my-8'>
+          Our Best Collection.
         </h1>
+        <p>{items.length} </p>
         <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 py-9 border rounded-lg p-8'>
           {items.map(
             (item, idx) =>
@@ -67,6 +71,7 @@ const Home = () => {
         </div>
       </div>
       {/* Crafted item section End  */}
+      <CustomerReviewSection></CustomerReviewSection>
     </div>
   );
 };

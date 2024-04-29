@@ -51,7 +51,7 @@ const MyCraft = () => {
   };
 
   return (
-    <div>
+    <div className='mt-16 mb-32'>
       <h1 className='text-center text-5xl font-bold text-gray-700 py-8'>
         My Art&Craft{" "}
       </h1>
@@ -96,18 +96,19 @@ const MyCraft = () => {
                 <h1 className='px-12 py-2 rounded-lg text-center bg-slate-400 text-white w-full text-xl font-medium my-4  '>
                   {item.stock}
                 </h1>
-                <div className='card-actions justify-between gap-12 '>
-                  <Link to='/update'>
-                    {" "}
-                    <button className='btn px-9 '>Update</button>
-                  </Link>
-
-                  <button
-                    onClick={() => handleDelete(item._id)}
-                    className='btn '>
-                    Delete
-                  </button>
-                </div>
+                <>
+                  <div className='card-actions justify-between gap-12 '>
+                    <Link to={`/update/${item._id}`}>
+                      {" "}
+                      <button className='btn px-9 '>Update</button>
+                    </Link>
+                    <button
+                      onClick={() => handleDelete(item._id)}
+                      className='btn '>
+                      Delete
+                    </button>
+                  </div>
+                </>
               </div>
             </div>
           </>

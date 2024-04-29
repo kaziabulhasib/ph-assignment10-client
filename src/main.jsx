@@ -71,12 +71,16 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/update",
+        path: "/update/:id",
         element: (
           <PrivateRoute>
             <Update></Update>
           </PrivateRoute>
         ),
+        // loader: (params) =>
+        //   fetch(
+        //     `https://assigment10-type02-server.vercel.app/items/${params.id}`
+        //   ),
       },
       {
         path: "/delete",
