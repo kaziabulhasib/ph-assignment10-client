@@ -4,6 +4,7 @@ import { AuthContext } from "../../../Providers/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 
 const Update = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const { user } = useContext(AuthContext);
   const { id } = useParams();
   const [item, setItem] = useState({});
@@ -66,6 +67,20 @@ const Update = () => {
         }
       });
   };
+
+  //loading start
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
+  if (isLoading) {
+    return (
+      <div>
+        <span className='loading loading-bars loading-lg'></span>
+      </div>
+    );
+  }
   return (
     <div className='mt-12 mb-96'>
       <div className='hero min-h-screen bg-base-200 mt-24 mb-36'>

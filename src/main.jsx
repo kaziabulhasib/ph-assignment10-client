@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Error from "./Components/Error/Error";
+// import "dotenv/config";
 
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";

@@ -1,7 +1,22 @@
+import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 
 const CraftItemDetails = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const craftedItem = useLoaderData();
+  //loading start
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
+  if (isLoading) {
+    return (
+      <div>
+        <span className='loading loading-bars loading-lg'></span>
+      </div>
+    );
+  }
   return (
     <div>
       <div className='flex flex-col lg:flex-row  justify-between  py-14 gap-12 items-center lg:mb-40 mb-[450px]'>

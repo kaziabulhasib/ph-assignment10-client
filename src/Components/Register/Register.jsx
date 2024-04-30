@@ -2,8 +2,6 @@ import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
-// toast
-
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -11,7 +9,7 @@ const Register = () => {
   const notify = () => toast("User created Successfully");
   const { createUser, updateUserProfile } = useContext(AuthContext);
 
-  const [showPassword, SetShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const [registerError, setRegisterError] = useState("");
   const [success, setSuccess] = useState(false);
 
@@ -24,14 +22,7 @@ const Register = () => {
     console.log(email, password, name, image);
     e.target.reset();
 
-    createUser(email, password)
-      .then((result) => {
-        console.log(result.user);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-    // password validation
+    // Password validation
     if (!/[A-Z]/.test(password)) {
       setRegisterError("Password must contain at least one uppercase letter");
       return;
@@ -41,15 +32,18 @@ const Register = () => {
       setRegisterError("Password must contain at least one lowercase letter");
       return;
     }
+
     if (password.length < 6) {
       setRegisterError("Password Should be 6 Character or More");
       return;
     }
-    // reset error
+
+    // Reset error
     setRegisterError("");
+
     createUser(email, password)
       .then((result) => {
-        // update user profil
+        // Update user profile
         updateUserProfile(name, image);
 
         console.log(result.user);
@@ -64,6 +58,7 @@ const Register = () => {
         setSuccess(false);
       });
   };
+
   return (
     <div className='hero min-h-screen bg-base-200'>
       <div className='hero-content flex-col '>
@@ -90,7 +85,7 @@ const Register = () => {
               <input
                 name='email'
                 type='email'
-                placeholder='email'
+                placeholder='Email'
                 className='input input-bordered'
                 required
               />
@@ -114,15 +109,15 @@ const Register = () => {
                 <input
                   name='password'
                   type={showPassword ? "text" : "password"}
-                  placeholder='password'
+                  placeholder='Password'
                   className='input input-bordered w-full'
                   required
                 />
 
                 <span
                   className='absolute top-4 right-3'
-                  onClick={() => SetShowPassword(!showPassword)}>
-                  {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+                  onClick={() => setShowPassword(!showPassword)}>
+                  {showPassword ? <FaEyeSlash /> : <FaEye />}
                 </span>
               </div>
               <label className='label'>

@@ -86,12 +86,16 @@ const Nav = () => {
                   <button className='btn btn-sm  btn-ghost'>
                     {user?.displayName || "user name not found"}
                   </button>
+                  {/* log out on hover  */}
+                  <Link onClick={handleLogOut} to='/register' className='btn'>
+                    Sign Out
+                  </Link>
                 </li>
               </ul>
             </div>
-            <Link onClick={handleLogOut} to='/register' className='btn'>
+            {/* <Link onClick={handleLogOut} to='/register' className='btn'>
               Sign Out
-            </Link>
+            </Link> */}
           </>
         ) : (
           <>
