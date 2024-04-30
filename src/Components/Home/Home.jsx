@@ -2,14 +2,30 @@ import { Link, useLoaderData } from "react-router-dom";
 import Slides from "../Slides/Slides";
 import AboutSection from "../AboutSection/AboutSection";
 import CustomerReviewSection from "../CustomerReviewSection/CustomerReviewSection";
+import { useEffect, useState } from "react";
 
 const Home = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const items = useLoaderData();
+
+  //loading start
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
+  if (isLoading) {
+    return (
+      <div>
+        <span className='loading loading-bars loading-lg'></span>
+      </div>
+    );
+  }
   return (
-    <div>
+    <div className=' mb:8'>
       <Slides></Slides>
       <AboutSection></AboutSection>
-      {/* Crafted item section started  */}
+      {/* Crafted item section start  */}
       <div className='mt-24 mb-36'>
         <h1 className='text-center text-5xl font-bold my-8'>
           Our Best Collection.

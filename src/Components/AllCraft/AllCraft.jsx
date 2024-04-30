@@ -1,7 +1,24 @@
+import { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
 const AllCraft = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const allCraftitems = useLoaderData();
+
+  //loading start
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
+  if (isLoading) {
+    return (
+      <div>
+        <span className='loading loading-bars loading-lg'></span>
+      </div>
+    );
+  }
+
   return (
     <div className='mt-16'>
       <h1 className='text-6xl font-bold text-center  text-gray-700 mb-8'>
