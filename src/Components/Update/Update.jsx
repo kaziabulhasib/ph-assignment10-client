@@ -1,7 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { AuthContext } from "../../../Providers/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
 
 const Update = () => {
+  const { user } = useContext(AuthContext);
   const { id } = useParams();
   const [item, setItem] = useState({});
   useEffect(() => {
@@ -12,7 +15,57 @@ const Update = () => {
         console.log(data);
       });
   }, [id]);
-  console.log(id);
+  // console.log(id);
+
+  const handleUpdate = (event) => {
+    const notify = () => toast("Item Updated Successfully");
+    event.preventDefault();
+    const form = event.target;
+    const itemName = form.itemName.value;
+    const imageUrl = form.imageUrl.value;
+
+    const subcategory = form.subcategory.value;
+    const description = form.description.value;
+    const price = form.price.value;
+    const rating = form.rating.value;
+    const customization = form.customization.value;
+    const processingTime = form.processing_time.value;
+    const stock = form.stock.value;
+    // const userName = form.userName.value;
+    const userName = user.displayName;
+    // const email = form.email.value;
+    const email = user.email;
+    const item = {
+      itemName,
+      imageUrl,
+      subcategory,
+      description,
+      price,
+      rating,
+      customization,
+      stock,
+      userName,
+      email,
+      processingTime,
+    };
+    console.log(item);
+    // put method
+    fetch(`https://assigment10-type02-server.vercel.app/update/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(item),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          // alert("Item Updated Successfully!");
+          notify();
+        }
+      });
+  };
   return (
     <div className='mt-12 mb-96'>
       <div className='hero min-h-screen bg-base-200 mt-24 mb-36'>
@@ -21,7 +74,7 @@ const Update = () => {
             <h1 className='text-5xl font-bold'>Update Item</h1>
           </div>
           <div className='card  shrink-0 w-full  shadow-2xl bg-base-100 mt-8'>
-            <form className='card-body'>
+            <form onSubmit={handleUpdate} className='card-body'>
               {/* item name , image url  */}
               <div className='flex gap-4'>
                 <div className='form-control'>
@@ -189,13 +242,17 @@ const Update = () => {
                 </div>
               </div>
 
-              <div className='form-control mt-6'>
-                <input className='btn' type='submit' value='Update Item' />
+              <div className='form-control mt-6 '>
+                <input
+                  className='btn  bg-green-500 hover:bg-green-700 text-white'
+                  type='submit'
+                  value='Update Item'
+                />
               </div>
             </form>
           </div>
         </div>
-        {/* <ToastContainer /> */}
+        <ToastContainer />
       </div>
     </div>
   );

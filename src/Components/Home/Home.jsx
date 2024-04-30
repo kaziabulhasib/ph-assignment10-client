@@ -14,7 +14,7 @@ const Home = () => {
         <h1 className='text-center text-5xl font-bold my-8'>
           Our Best Collection.
         </h1>
-        <p>{items.length} </p>
+        {/* <p>{items.length} </p> */}
         <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 py-9 border rounded-lg p-8'>
           {items.map(
             (item, idx) =>
