@@ -51,12 +51,12 @@ const router = createBrowserRouter([
             `https://assigment10-type02-server.vercel.app/items/${params.id}`
           ),
       },
-      {
-        path: "/allitems",
-        element: <AllItems></AllItems>,
-        loader: () =>
-          fetch("https://assigment10-type02-server.vercel.app/items"),
-      },
+      // {
+      //   path: "/allitems",
+      //   element: <AllItems></AllItems>,
+      //   loader: () =>
+      //     fetch("https://assigment10-type02-server.vercel.app/items"),
+      // },
       {
         path: "/allcraft",
         element: <AllCraft></AllCraft>,
