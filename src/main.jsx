@@ -10,14 +10,14 @@ import Root from "./Components/Root/Root";
 import Register from "./Components/Register/Register";
 import Login from "./Components/Login/Login";
 import AddItem from "./Components/AddItem/AddItem";
-import AllItems from "./Components/AllItems/AllItems";
+// import AllItems from "./Components/AllItems/AllItems";
 import MyCraft from "./Components/MyCraft/MyCraft";
 import AuthProvider from "../Providers/AuthProvider";
 import PrivateRoute from "./routes/PrivateRoute";
 import CraftItemDetails from "./Components/CraftItemDetails/CraftItemDetails";
 import AllCraft from "./Components/AllCraft/AllCraft";
 import Update from "./Components/Update/Update";
-import Delete from "./Components/Delete/Delete";
+// import Delete from "./Components/Delete/Delete";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -83,14 +83,14 @@ const router = createBrowserRouter([
         //     `https://assigment10-type02-server.vercel.app/items/${params.id}`
         //   ),
       },
-      {
-        path: "/delete",
-        element: (
-          <PrivateRoute>
-            <Delete></Delete>
-          </PrivateRoute>
-        ),
-      },
+      // {
+      //   path: "/delete",
+      //   element: (
+      //     <PrivateRoute>
+      //       <Delete></Delete>
+      //     </PrivateRoute>
+      //   ),
+      // },
       {
         path: "/register",
         element: <Register></Register>,
