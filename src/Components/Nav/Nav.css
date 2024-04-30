@@ -1,8 +1,10 @@
 .nav-link.active {
   border: none;
-  color: #4e4f4e;
+  /* color: #4e4f4e; */
+  color: aliceblue;
 
-  background-color: rgb(232, 229, 229);
+  /* background-color: rgb(232, 229, 229); */
+  background-color: slategrey;
 
   border-radius: 8px;
   font-weight: 700;
@@ -11,4 +13,8 @@
 
 .nav-link {
   margin-right: 24px;
+
+  font-weight: 500;
+  font-size: 16px;
+  color: slategray;
 }

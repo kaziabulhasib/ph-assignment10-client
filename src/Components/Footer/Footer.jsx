@@ -16,9 +16,9 @@ const Footer = () => {
             <p className='text-gray-300'>Discover the beauty of art.</p>
           </div>
 
-          <div>
-            <h2 className='text-lg font-semibold mb-2'>Contact Us</h2>
-            <div className='flex items-center mb-2 text-gray-300'>
+          <div className='lg:text-left '>
+            <h2 className='text-lg font-semibold mb-2 '>Contact Us</h2>
+            <div className='flex items-center mb-2 text-gray-300  '>
               <FontAwesomeIcon icon={faEnvelope} className='mr-2' />
               <p>info@brushify.com</p>
             </div>

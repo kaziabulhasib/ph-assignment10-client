@@ -47,7 +47,7 @@ const Slides = () => {
           </div>
         </div>
       </div>
-      <h1 className='text-4xl text-center font-bold text-slate-300 font-robo absolute top-[50%] left-[20%]'>
+      <h1 className='lg:text-4xl text-3xl text-center font-bold text-slate-300 font-robo absolute top-[50%] left-[20%] '>
         Welcome to Our Exciting Art&Craft Website
       </h1>
     </div>

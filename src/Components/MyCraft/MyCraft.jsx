@@ -62,7 +62,7 @@ const MyCraft = () => {
           <span className='loading loading-bars loading-lg'></span>
         </div>
       ) : (
-        <div className=' grid grid-cols-3 gap-8'>
+        <div className=' grid lg:grid-cols-3 grid-cols-1 gap-8'>
           {items.map((item) => (
             <>
               <div className='card card-compact w-96 bg-base-100 shadow-xl'>

@@ -56,15 +56,15 @@ const AddItem = () => {
       });
   };
   return (
-    <div className='hero min-h-screen bg-base-200 mt-24 mb-36'>
+    <div className='hero min-h-screen bg-base-200 lg:mt-24 mt:8 lg:mb-36 mb:8'>
       <div className='hero-content flex-col '>
         <div className='text-center lg:text-left'>
-          <h1 className='text-5xl font-bold'>Add Item</h1>
+          <h1 className='lg:text-5xl text-3xl font-bold'>Add Item</h1>
         </div>
         <div className='card  shrink-0 w-full  shadow-2xl bg-base-100 mt-8'>
           <form onSubmit={handleAddItem} className='card-body'>
             {/* item name , image url  */}
-            <div className='flex gap-4'>
+            <div className='flex lg:flex-row flex-col gap-4'>
               <div className='form-control'>
                 <label className='label'>
                   <span className='label-text'>Item Name</span>
@@ -122,7 +122,7 @@ const AddItem = () => {
                 required></textarea>
             </div>
             {/* price , rating  */}
-            <div className='flex gap-4'>
+            <div className='flex lg:flex-row flex-col gap-4'>
               <div className='form-control w-full'>
                 <label className='label'>
                   <span className='label-text'>Price</span>
@@ -149,7 +149,7 @@ const AddItem = () => {
               </div>
             </div>
             {/* Customization , stock  */}
-            <div className='flex gap-4'>
+            <div className='flex lg:flex-row flex-col gap-4'>
               <div className='form-control w-full'>
                 <label className='label'>
                   <span className='label-text'>Customization (yes/no)</span>
@@ -186,7 +186,7 @@ const AddItem = () => {
             </div>
 
             {/* user name & email  */}
-            <div className='flex gap-4'>
+            <div className='flex lg:flex-row flex-col gap-4'>
               <div className='form-control'>
                 <label className='label'>
                   <span className='label-text'>User Email</span>

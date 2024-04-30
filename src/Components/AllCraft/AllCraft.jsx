@@ -21,7 +21,7 @@ const AllCraft = () => {
 
   return (
     <div className='mt-16'>
-      <h1 className='text-6xl font-bold text-center  text-gray-700 mb-8'>
+      <h1 className='lg:text-6xl text-3xl font-bold text-center  text-gray-700 mb-8'>
         All Art & Craft
       </h1>
       <div className='overflow-x-auto'>

@@ -19,7 +19,7 @@ const CraftItemDetails = () => {
   }
   return (
     <div>
-      <div className='flex flex-col lg:flex-row  justify-between  py-14 gap-12 items-center lg:mb-40 mb-[450px]'>
+      <div className='flex flex-col lg:flex-row  justify-between  py-14 gap-12 items-center lg:mb-32 lg-8'>
         <div className='p-16 bg-[#1313130D] flex justify-center items-center rounded-2xl flex-1'>
           <img
             className='w-[425px] lg:h-[565px]'
