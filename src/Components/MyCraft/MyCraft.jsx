@@ -104,9 +104,7 @@ const MyCraft = () => {
                       {item?.processingTime || "7"}
                     </p>
                   </div>
-                  <h1 className='px-12 py-2 rounded-lg text-center bg-slate-400 text-white w-full text-xl font-medium my-4  '>
-                    {item.stock}
-                  </h1>
+                  <h1>{item.stock}</h1>
                   <>
                     <div className='card-actions justify-between gap-12  '>
                       <Link to={`/update/${item._id}`}>
