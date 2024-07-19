@@ -44,6 +44,10 @@ const MyCraft = () => {
                 text: "Your file has been deleted.",
                 icon: "success",
               });
+
+              // update ui
+              const remaining = items.filter((item) => item._id !== _id);
+              setItems(remaining);
             }
           });
         console.log("delete confirmed");
