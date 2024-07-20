@@ -69,12 +69,15 @@ const MyCraft = () => {
         <div className=' grid lg:grid-cols-3 grid-cols-1 gap-8'>
           {items.map((item) => (
             <>
-              <div className='card card-compact w-96 bg-base-100 shadow-xl'>
-                <figure>
-                  <img src={item.imageUrl} />
+              <div className='card card-compact w-96 bg-base-100 shadow-xl hover:bg-base-200'>
+                <figure className='w-full h-[350px] px-6 py-4 '>
+                  <img className='w-full h-full' src={item.imageUrl} />
                 </figure>
-                <div className='card-body items-center'>
-                  <h2 key={item._id} className='card-title'>
+                <div className='card-body items-center relative'>
+                  <h1 className='btn btn-xs absolute right-6 top-0'>
+                    {item.stock}
+                  </h1>
+                  <h2 key={item._id} className='card-title mt-4'>
                     {item.itemName}
                   </h2>
                   <h4 className='font-medium'>
@@ -89,33 +92,33 @@ const MyCraft = () => {
                       {item.price}
                     </p>
                     <p>
-                      <span className='font-semibold'>Rating: </span>
-                      {item.rating}
-                    </p>
-                  </div>
-                  {/* Ccustomizatin , processing time  */}
-                  <div className='flex gap-12'>
-                    <p>
                       <span className='font-semibold'>Customization: </span>
                       {item.customization}
+                    </p>
+                  </div>
+                  {/* rating , processing time  */}
+                  <div className='flex  px-14   w-full  '>
+                    <p>
+                      <span className='font-semibold'>Rating: </span>
+                      {item.rating}
                     </p>
                     <p>
                       <span className='font-semibold'>Processing-day: </span>
                       {item?.processingTime || "7"}
                     </p>
                   </div>
-                  <h1>{item.stock}</h1>
+
                   <>
-                    <div className='card-actions justify-between gap-12  '>
+                    <div className='card-actions justify-between gap-6 my-4  '>
                       <Link to={`/update/${item._id}`}>
                         {" "}
-                        <button className='btn px-9 bg-green-600 hover:bg-green-800 text-white '>
+                        <button className='btn btn-sm  bg-green-600 hover:bg-green-800 text-white '>
                           Update
                         </button>
                       </Link>
                       <button
                         onClick={() => handleDelete(item._id)}
-                        className='btn bg-red-500 hover:bg-red-800 text-white '>
+                        className='btn btn-sm bg-red-500 hover:bg-red-800 text-white '>
                         Delete
                       </button>
                     </div>
